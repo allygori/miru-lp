@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 2,
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert",
+}
