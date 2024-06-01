@@ -1,11 +1,138 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import NavbarOne from "@/app/components/navbars/navbar-one";
+import HeaderTwo from "@/app/components/layouts/headers/header-two";
+import Container from "@/app/components/general/container";
+import HeroOne from "@/app/components/sections/hero/hero-one";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <NavbarOne />
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+    <div className="flex min-h-screen flex-col items-center justify-start">
+      <HeaderTwo />
+      <HeroOne />
+
+      <Container
+        className="max-w-screen-xl my-4"
+        classObject={{ padding: "px-2" }}
+      >
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+        <p>
+          Enim occaecat elit consequat laborum voluptate non in Lorem officia.
+          Laborum ex deserunt proident pariatur ullamco ullamco pariatur fugiat.
+          Ullamco quis non amet nisi sunt nisi culpa veniam officia velit est
+          enim aliquip. Fugiat eu ipsum occaecat culpa sint cillum irure
+          consequat aliqua. Minim cillum aliquip consectetur non. Ex aliqua
+          magna quis Lorem do occaecat adipisicing aute reprehenderit ut velit
+          velit veniam in.
+        </p>
+      </Container>
+      {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">app/page.tsx</code>
@@ -109,7 +236,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
-    </main>
+      </div> */}
+    </div>
   );
 }
