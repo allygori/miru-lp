@@ -6,7 +6,7 @@ type Props = {
   height?: string | number | undefined;
 };
 
-const HeroOne = ({ height = 50 }: Props) => {
+const HeroTwo = ({ height = 50 }: Props) => {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const HeroOne = ({ height = 50 }: Props) => {
 
   return (
     <section
-      className={`bg-[#f1efff] min-h-screen min-w-full`}
+      className={`bg-[#edeae7] min-h-screen min-w-full}`}
       style={{ padding: scroll ? "0px" : `${height}px 0px` }}
     >
       <div className="flex flex-row items-center justify-between">
@@ -28,4 +28,4 @@ const HeroOne = ({ height = 50 }: Props) => {
   );
 };
 
-export default HeroOne;
+export default HeroTwo;
