@@ -30,7 +30,7 @@ const HeaderTwo = ({ height }: Props) => {
       style={{ height }}
     >
       {/* max-w-screen-xl */}
-      <Container className="w-11/12 flex flex-wrap items-center justify-between mx-auto h-full">
+      <Container className="w-10/12 flex flex-wrap items-center justify-between mx-auto h-full">
         <Link
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"

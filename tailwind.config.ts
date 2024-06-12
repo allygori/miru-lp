@@ -8,13 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        "fade-in-down": "fadeInDown 0.5s ease-out",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      animation: {
-        "fade-in-down": "fadeInDown 0.5s ease-out",
+      colors: {
+        "sea-mist": {
+          25: "#eaf1f2",
+          50: "#e0fff2",
+          200: "#b8f2da",
+          400: "#23c4b0",
+        },
+      },
+      fontSize: {
+        "2xs": ["0.6rem", "0.825rem"],
       },
       keyframes: {
         fadeInDown: {

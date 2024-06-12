@@ -1,31 +1,9 @@
 {
-  // "editor.formatOnSave": true,
-  // // "editor.indentSize": "tabSize",
-  // // "editor.tabSize": 2,
-  // // "[typescript]": {
-  // //   "editor.defaultFormatter": "vscode.typescript-language-features"
-  // // },
-  // // "[typescriptreact]": {
-  // //     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  // // },
-  // // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "javascript.format.semicolons": "insert",
-  // "typescript.format.semicolons": "insert",
-  // "editor.codeActionsOnSave": {
-  //   // "source.fixAll.eslint": "always",
-  //   "source.fixAll": "always",
-  // },
-  // "eslint.validate": [
-  //   "javascript",
-  //   "javascriptreact",
-  //   "typescript",
-  //   "typescriptreact",
-  // ],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   },
-  "files.autoSave": "afterDelay",
+  // "files.autoSave": "afterDelay",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
