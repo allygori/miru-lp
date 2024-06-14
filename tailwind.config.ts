@@ -25,7 +25,7 @@ const config: Config = {
         },
       },
       fontSize: {
-        "2xs": ["0.6rem", "0.825rem"],
+        "2xs": ["0.65rem", "0.825rem"],
       },
       keyframes: {
         fadeInDown: {
