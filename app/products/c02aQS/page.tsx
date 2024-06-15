@@ -10,19 +10,19 @@ import Description from "./components/sections/description";
 
 const Page = () => {
   return (
-    <main>
+    <main className="bg-[#f6f6f6]">
       <Container
-        className={`w-full md:w-10/12 lg:w-7/12 xl:w-5/12`}
+        className={`w-full bg-white md:w-10/12 lg:w-7/12 xl:w-5/12`}
         classObject={{ padding: "px-0 md:px-5" }}
       >
         {/* section:images */}
         <Images />
       </Container>
       {/* section:price */}
-      <Price className="mb-2 mt-4" />
+      <Price className="bg-white pb-2 pt-4" />
 
       {/* section:product-name */}
-      <section className="mb-6">
+      <section className="bg-white pb-4">
         <Container
           className={`w-full md:w-10/12 lg:w-7/12 xl:w-5/12`}
           classObject={{ padding: "px-3 md:px-5" }}
@@ -34,10 +34,10 @@ const Page = () => {
       </section>
 
       {/* section:guarantee */}
-      <Guarantee className="mb-6" />
+      <Guarantee className="mb-3 bg-white" />
 
       {/* section:description */}
-      <Description />
+      <Description className="bg-white py-4" />
     </main>
   );
 };

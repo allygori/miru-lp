@@ -11,7 +11,7 @@ const Description = ({ className = "" }: Props) => {
         className={`w-full md:w-10/12 lg:w-7/12 xl:w-5/12`}
         classObject={{ padding: "px-3 md:px-5" }}
       >
-        <h2 className="mb-2 text-sm text-gray-500">Description</h2>
+        <h2 className="mb-2 text-sm font-semibold text-black">Deskripsi</h2>
         {/* title-short-description */}
         <div className="my-4">
           <h1 className="mb-2 text-center text-base font-semibold">
