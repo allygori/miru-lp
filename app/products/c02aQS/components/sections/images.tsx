@@ -76,7 +76,7 @@ const breakpoints = {
     spaceBetween: 0,
   },
   375: {
-    slidesPerView: 4.4,
+    slidesPerView: 4.6,
     spaceBetween: 0,
   },
   425: {
@@ -133,7 +133,7 @@ const Images = ({ className = "" }: Props) => {
 
       {/* variants:name */}
       <div>
-        <p className="text-xs">
+        <p className="mb-0.5 text-xs">
           <small>Terdapat 8 variasi warna</small>
         </p>
       </div>
