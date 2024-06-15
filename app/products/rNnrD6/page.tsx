@@ -17,7 +17,7 @@ import ImgMain from "@/public/assets/img/products/rNnrD6/hMHB3egnjEoHfPnhMAVTCr8
 
 const Page = () => {
   return (
-    <main className="debug flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       {/* section:hero */}
       <section>
         <Container

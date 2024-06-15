@@ -24,7 +24,7 @@ import ImgColorMocca from "@/public/assets/img/products/rNnrD6/h9PdaFlzFF8dCmqh9
 import ImgColorLylac from "@/public/assets/img/products/rNnrD6/h9Pd3o9rFDyqxuh9PtS8WBPYFEgWHRgOt0iDStytDuQ.webp";
 
 type Props = {
-  className?: string;
+  className?: string | undefined;
 };
 
 type TImage = {
