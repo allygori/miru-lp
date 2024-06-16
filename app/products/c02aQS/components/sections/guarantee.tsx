@@ -11,7 +11,7 @@ const Guarantee = ({ className = "" }: Props) => {
   return (
     <section className={className}>
       <Container
-        className={`w-full md:w-10/12 lg:w-7/12 xl:w-5/12`}
+        className={`w-full bg-white md:w-10/12 lg:w-7/12 xl:w-5/12`}
         classObject={{ padding: "px-0 md:px-5" }}
       >
         <div className="flex w-full items-start justify-start border-b border-t border-slate-200/90 px-3 py-2">

@@ -5,11 +5,12 @@ import "swiper/css/free-mode";
 // import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
+import styles from "./images.module.css";
 
-import { CSSProperties, useState } from "react";
+import { CSSProperties, useState, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules";
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
+import { FreeMode, Pagination, Thumbs } from "swiper/modules";
 
 // images
 import ImgMain from "@/public/assets/img/products/rNnrD6/hMHB3egnjEoHfPnhMAVTCr8TQm2bVcRMyofvskDakGzg.webp";
@@ -33,20 +34,7 @@ type TImage = {
   src: StaticImageData;
 };
 
-// const images: TImage[] = [
-//   { name: "Main", src: ImgMain },
-//   { name: "Sage Green", src: ImgColorSageGreen },
-//   { name: "Navy Blue", src: ImgColorNavyBlue },
-//   { name: "Beige", src: ImgColorBeige },
-//   { name: "Black", src: ImgColorBlack },
-//   { name: "Army Green", src: ImgColorArmyGreen },
-//   { name: "Dusty Pink", src: ImgColorDustyPink },
-//   { name: "Misty Grey", src: ImgColorMistyGrey },
-//   { name: "Mocca", src: ImgColorMocca },
-//   { name: "ImgColorLylac", src: ImgColorLylac },
-// ];
-
-const images: TImage[] = [{ name: "Main", value: "main-01", src: ImgMain }];
+const mainImages: TImage[] = [{ name: "Main", value: "main-01", src: ImgMain }];
 
 const colors: TImage[] = [
   { name: "Sage Green", value: "sage-green", src: ImgColorSageGreen },
@@ -61,66 +49,103 @@ const colors: TImage[] = [
 ];
 
 const variant = {
+  colors: colors,
   sizes: [
     { name: "S", value: "s" },
     { name: "M", value: "m" },
     { name: "L", value: "l" },
     { name: "XL", value: "xl" },
   ],
-  colors: colors,
 };
 
-const breakpoints = {
-  0: {
-    slidesPerView: 3.8,
-    spaceBetween: 0,
-  },
-  375: {
-    slidesPerView: 4.6,
-    spaceBetween: 0,
-  },
-  425: {
-    slidesPerView: 5,
-    spaceBetween: 0,
-  },
-  768: {
-    slidesPerView: 7,
-    spaceBetween: 0,
-  },
-  1024: {
-    slidesPerView: 6.5,
-    spaceBetween: 0,
-  },
-};
+// const breakpoints = {
+//   0: {
+//     slidesPerView: 3.8,
+//     spaceBetween: 0,
+//   },
+//   375: {
+//     slidesPerView: 4.6,
+//     spaceBetween: 0,
+//   },
+//   425: {
+//     slidesPerView: 5,
+//     spaceBetween: 0,
+//   },
+//   768: {
+//     slidesPerView: 7,
+//     spaceBetween: 0,
+//   },
+//   1024: {
+//     slidesPerView: 6.5,
+//     spaceBetween: 0,
+//   },
+// };
 
 const Images = ({ className = "" }: Props) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const mainSwiperRef = useRef<SwiperRef>(null);
+  const thumbsSwiperRef = useRef<SwiperRef>(null);
+  const [mainRealIndex, setMainRealIndex] = useState<number>(0);
+  const [mainPreviousRealIndex, setMainPreviousRealIndex] = useState<number>(0);
+
+  const mainImagesTotal = mainImages.length;
+  // const firstVariantTotal = variant.colors.length;
+
+  const chooseVariantColor = (image: TImage, index: number) => {
+    mainSwiperRef.current?.swiper.slideToLoop(
+      mainImagesTotal + index,
+      500,
+      false,
+    );
+  };
+
+  const onMainActiveIndexChange = (realIndex: number) => {
+    if (realIndex !== mainRealIndex) {
+      setMainPreviousRealIndex(mainRealIndex);
+      setMainRealIndex(realIndex);
+
+      // slide next
+      if (mainRealIndex > realIndex) {
+        thumbsSwiperRef.current?.swiper.slideTo(realIndex - mainImagesTotal);
+      }
+      // prev
+      else {
+        thumbsSwiperRef.current?.swiper.slideTo(realIndex - mainImagesTotal);
+      }
+    }
+  };
 
   return (
     <section className={className}>
       <Swiper
-        style={
-          {
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          } as CSSProperties
-        }
+        ref={mainSwiperRef}
+        modules={[FreeMode, Pagination, Thumbs]}
         loop={true}
         navigation={false}
         centeredSlides={false}
         grabCursor={true}
         autoHeight={false}
         spaceBetween={0}
-        thumbs={{ swiper: thumbsSwiper }}
+        // thumbs={{ swiper: thumbsSwiper }}
         pagination={{
           type: "fraction",
+          renderFraction(currentClass, totalClass) {
+            return `
+              <div class="bg-white/75 text-center text-xs text-gray-800 px-1 py-0.5 border border-gray-300 rounded-md inline-flex opacity-90">
+                <span class="${currentClass}"></span> / <span class="${totalClass}"></span>
+              </div>
+            `;
+          },
         }}
-        modules={[FreeMode, Pagination, Thumbs]}
-        className="mySwiper2"
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        className={`${styles["swiper-ovveride"]}`}
+        style={
+          {
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+          } as CSSProperties
+        }
+        onSlideChange={(swiper) => onMainActiveIndexChange(swiper.realIndex)}
       >
-        {(images.concat(colors) || []).map((image, idx) => {
+        {(mainImages.concat(colors) || []).map((image, idx) => {
           return (
             <SwiperSlide key={idx}>
               <div className="mx-auto aspect-square w-full">
@@ -133,26 +158,39 @@ const Images = ({ className = "" }: Props) => {
 
       {/* variants:name */}
       <div>
-        <p className="mb-0.5 text-xs">
-          <small>Terdapat 8 variasi warna</small>
+        <p className="mb-0.5 px-0.5 text-xs">
+          {variant.colors[mainRealIndex - mainImagesTotal]?.value ? (
+            <small>
+              {variant.colors[mainRealIndex - mainImagesTotal].name}
+            </small>
+          ) : (
+            <small>Terdapat 9 variasi warna</small>
+          )}
         </p>
       </div>
 
       {/* thumbs */}
       <Swiper
-        onSwiper={(swiper) => setThumbsSwiper}
-        loop={true}
-        freeMode={false}
-        watchSlidesProgress={true}
-        breakpoints={breakpoints}
+        ref={thumbsSwiperRef}
         modules={[FreeMode, Thumbs]}
-        className="mySwiper"
+        loop={false}
+        freeMode={false}
+        // watchSlidesProgress={true}
+        // breakpoints={breakpoints}
+        slidesPerView={"auto"}
+        spaceBetween={0}
       >
-        {colors.slice(1).map((image, idx) => {
+        {colors.slice(0).map((image, idx) => {
           return (
-            <SwiperSlide key={idx}>
-              <div className="mx-auto aspect-square h-20 w-20">
-                <Image src={image.src} alt={image.name} />
+            <SwiperSlide
+              key={idx}
+              className={`${styles["swiper-slide-ovveride"]} px-[0.175rem]`}
+            >
+              <div
+                className={`aspect-square h-16 w-16 overflow-hidden md:h-20 md:w-20 ${idx === mainRealIndex - mainImagesTotal ? "border border-[#ee4d2d]" : ""}`}
+                onClick={() => chooseVariantColor(image, idx)}
+              >
+                <Image src={image.src} alt={image.name} className="" />
               </div>
             </SwiperSlide>
           );

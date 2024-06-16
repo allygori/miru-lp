@@ -19,13 +19,13 @@ const Page = () => {
         <Images />
       </Container>
       {/* section:price */}
-      <Price className="bg-white pb-2 pt-4" />
+      <Price />
 
       {/* section:product-name */}
-      <section className="bg-white pb-4">
+      <section className="">
         <Container
-          className={`w-full md:w-10/12 lg:w-7/12 xl:w-5/12`}
-          classObject={{ padding: "px-3 md:px-5" }}
+          className={`w-full bg-white md:w-10/12 lg:w-7/12 xl:w-5/12`}
+          classObject={{ padding: "px-3 md:px-5 pb-4" }}
         >
           <h1 className="m-0 text-sm font-normal">
             Hana Dress Pakaian Simple Dress Muslimah Polos
@@ -34,7 +34,7 @@ const Page = () => {
       </section>
 
       {/* section:guarantee */}
-      <Guarantee className="mb-3 bg-white" />
+      <Guarantee className="mb-3" />
 
       {/* section:description */}
       <Description className="bg-white py-4" />

@@ -8,8 +8,8 @@ const Price = ({ className = "" }: Props) => {
   return (
     <section className={className}>
       <Container
-        className={`flex w-full flex-row items-center justify-between md:w-10/12 lg:w-7/12 xl:w-5/12`}
-        classObject={{ padding: "px-3 md:px-5" }}
+        className={`flex w-full flex-row items-center justify-between bg-white md:w-10/12 lg:w-7/12 xl:w-5/12`}
+        classObject={{ padding: "px-3 md:px-5 pb-2 pt-4" }}
       >
         <div className="flex flex-row items-center">
           {/* price */}
