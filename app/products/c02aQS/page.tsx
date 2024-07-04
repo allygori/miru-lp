@@ -41,7 +41,7 @@ const Page = () => {
       <Guarantee className="mb-3" />
 
       {/* section:description */}
-      <Description className="bg-white py-4" />
+      <Description className="py-4" />
 
       {/* section:test */}
       {/* <Test className="bg-white py-4" /> */}

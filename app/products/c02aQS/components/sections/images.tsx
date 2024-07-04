@@ -2,7 +2,6 @@
 
 import "swiper/css";
 import "swiper/css/free-mode";
-// import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import styles from "./images.module.css";
@@ -11,18 +10,11 @@ import { CSSProperties, useState, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { FreeMode, Pagination, Thumbs } from "swiper/modules";
-
-// images
-import ImgMain from "@/public/assets/img/products/rNnrD6/hMHB3egnjEoHfPnhMAVTCr8TQm2bVcRMyofvskDakGzg.webp";
-import ImgColorSageGreen from "@/public/assets/img/products/rNnrD6/hMAZLvtMCEywfXshMK83UFvMsxG4DDSMaSI0hJZMUMg.webp";
-import ImgColorNavyBlue from "@/public/assets/img/products/rNnrD6/hMHBy28zs3uwL0YhMK8DpXonTXXG9dRzG3Bw1YXH1NnQ.webp";
-import ImgColorBeige from "@/public/assets/img/products/rNnrD6/h9PdaFlzFF8dCmqh9PtKu7IfyEpCkRJG1Mpbj30zXWw.webp";
-import ImgColorBlack from "@/public/assets/img/products/rNnrD6/hMHBy28zs3uwL0YhMK8OvpzHVhKC6kT6yjG0ga9YqiMA.webp";
-import ImgColorArmyGreen from "@/public/assets/img/products/rNnrD6/hMAwtJzi9fHx0hNhMK87XA7uHYQ4KJQk3KA5IPiA6w.webp";
-import ImgColorDustyPink from "@/public/assets/img/products/rNnrD6/hMHB3MY0hnAsJhqnhMK8k9lvFsHP0LPTZmIJkOZGntuiA.webp";
-import ImgColorMistyGrey from "@/public/assets/img/products/rNnrD6/hMHBBcKz2HFHLi1hMK8SiDww9CyhpTGCHXp1JPMkXPQ.webp";
-import ImgColorMocca from "@/public/assets/img/products/rNnrD6/h9PdaFlzFF8dCmqh9PtRIsdWnCaQdQCpQihNbpQw.webp";
-import ImgColorLylac from "@/public/assets/img/products/rNnrD6/h9Pd3o9rFDyqxuh9PtS8WBPYFEgWHRgOt0iDStytDuQ.webp";
+import {
+  variant,
+  images,
+  mainImages,
+} from "@/app/products/c02aQS/lib/constants";
 
 type Props = {
   className?: string | undefined;
@@ -34,53 +26,6 @@ type TImage = {
   src: StaticImageData;
 };
 
-const mainImages: TImage[] = [{ name: "Main", value: "main-01", src: ImgMain }];
-
-const colors: TImage[] = [
-  { name: "Sage Green", value: "sage-green", src: ImgColorSageGreen },
-  { name: "Navy Blue", value: "navy-blue", src: ImgColorNavyBlue },
-  { name: "Beige", value: "beige", src: ImgColorBeige },
-  { name: "Black", value: "black", src: ImgColorBlack },
-  { name: "Army Green", value: "army-green", src: ImgColorArmyGreen },
-  { name: "Dusty Pink", value: "dusty-pink", src: ImgColorDustyPink },
-  { name: "Misty Grey", value: "misty-grey", src: ImgColorMistyGrey },
-  { name: "Mocca", value: "mocca", src: ImgColorMocca },
-  { name: "Lylac", value: "lylac", src: ImgColorLylac },
-];
-
-const variant = {
-  colors: colors,
-  sizes: [
-    { name: "S", value: "s" },
-    { name: "M", value: "m" },
-    { name: "L", value: "l" },
-    { name: "XL", value: "xl" },
-  ],
-};
-
-// const breakpoints = {
-//   0: {
-//     slidesPerView: 3.8,
-//     spaceBetween: 0,
-//   },
-//   375: {
-//     slidesPerView: 4.6,
-//     spaceBetween: 0,
-//   },
-//   425: {
-//     slidesPerView: 5,
-//     spaceBetween: 0,
-//   },
-//   768: {
-//     slidesPerView: 7,
-//     spaceBetween: 0,
-//   },
-//   1024: {
-//     slidesPerView: 6.5,
-//     spaceBetween: 0,
-//   },
-// };
-
 const Images = ({ className = "" }: Props) => {
   const mainSwiperRef = useRef<SwiperRef>(null);
   const thumbsSwiperRef = useRef<SwiperRef>(null);
@@ -88,7 +33,6 @@ const Images = ({ className = "" }: Props) => {
   const [mainPreviousRealIndex, setMainPreviousRealIndex] = useState<number>(0);
 
   const mainImagesTotal = mainImages.length;
-  // const firstVariantTotal = variant.colors.length;
 
   const chooseVariantColor = (image: TImage, index: number) => {
     mainSwiperRef.current?.swiper.slideToLoop(
@@ -145,7 +89,7 @@ const Images = ({ className = "" }: Props) => {
         }
         onSlideChange={(swiper) => onMainActiveIndexChange(swiper.realIndex)}
       >
-        {(mainImages.concat(colors) || []).map((image, idx) => {
+        {images.map((image, idx) => {
           return (
             <SwiperSlide key={idx}>
               <div className="mx-auto aspect-square w-full">
@@ -164,7 +108,7 @@ const Images = ({ className = "" }: Props) => {
               {variant.colors[mainRealIndex - mainImagesTotal].name}
             </small>
           ) : (
-            <small>Terdapat 9 variasi warna</small>
+            <small>Terdapat {variant.colors.length} variasi warna</small>
           )}
         </p>
       </div>
@@ -180,7 +124,7 @@ const Images = ({ className = "" }: Props) => {
         slidesPerView={"auto"}
         spaceBetween={0}
       >
-        {colors.slice(0).map((image, idx) => {
+        {variant.colors.slice(0).map((image, idx) => {
           return (
             <SwiperSlide
               key={idx}

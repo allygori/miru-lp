@@ -8,8 +8,8 @@ const Description = ({ className = "" }: Props) => {
   return (
     <section className={className}>
       <Container
-        className={`w-full md:w-10/12 lg:w-7/12 xl:w-5/12`}
-        classObject={{ padding: "px-3 md:px-5" }}
+        className={`w-full bg-white md:w-10/12 lg:w-7/12 xl:w-5/12`}
+        classObject={{ padding: "px-3 md:px-5 py-4" }}
       >
         <h2 className="mb-2 text-sm font-semibold text-black">Deskripsi</h2>
         {/* title-short-description */}
