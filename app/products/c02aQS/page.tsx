@@ -3,6 +3,9 @@ import Images from "./components/sections/images";
 import Price from "./components/sections/price";
 import Guarantee from "./components/sections/guarantee";
 import Description from "./components/sections/description";
+import Test from "./components/sections/test";
+import Test2 from "./components/sections/test2";
+import CTA from "./components/sections/cta";
 
 // type Props = {
 //   className?: string | undefined;
@@ -18,6 +21,7 @@ const Page = () => {
         {/* section:images */}
         <Images />
       </Container>
+
       {/* section:price */}
       <Price />
 
@@ -38,6 +42,13 @@ const Page = () => {
 
       {/* section:description */}
       <Description className="bg-white py-4" />
+
+      {/* section:test */}
+      {/* <Test className="bg-white py-4" /> */}
+      <Test2 />
+
+      {/* section:cta */}
+      <CTA />
     </main>
   );
 };

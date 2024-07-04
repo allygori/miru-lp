@@ -4,4 +4,4 @@ const useLayoutEffect = Boolean(globalThis?.document)
   ? React.useLayoutEffect
   : () => {};
 
-export { useLayoutEffect };
+export default useLayoutEffect;
